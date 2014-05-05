@@ -148,7 +148,7 @@
 										element: document.querySelector('#graph-' + feedId + '-' + datastream.id),
 										width: 600,
 										height: 200,
-										renderer: 'line',
+										renderer: 'area',
 										min: parseFloat(datastream.min_value) - .25*(parseFloat(datastream.max_value) - parseFloat(datastream.min_value)),
 										max: parseFloat(datastream.max_value) + .25*(parseFloat(datastream.max_value) - parseFloat(datastream.min_value)),
 										padding: {
@@ -157,27 +157,18 @@
 											bottom: 0.02,
 											left: 0.02
 										},
-										series: series
+											 								data: [ 
+            									{ x: 0, y: 40 }, 
+            									{ x: 1, y: 49 }, 
+            									{ x: 2, y: 38 }, 
+            									{ x: 3, y: 30 }, 
+            									{ x: 4, y: 32 } ]
+										
+								//		series: series
 									});
 
 									graph.render();
 									
-									var graph = new Rickshaw.Graph( {
-    									element: document.querySelector("#chart"), 
-    									width: 300, 
-    									height: 200, 
-    									series: [{
-        								color: 'steelblue',
-	 								data: [ 
-            								{ x: 0, y: 40 }, 
-            								{ x: 1, y: 49 }, 
-            								{ x: 2, y: 38 }, 
-            								{ x: 3, y: 30 }, 
-            								{ x: 4, y: 32 } ]
-    									}]
-									});
- 
-									graph.render();
 
 									var ticksTreatment = 'glow';
 
